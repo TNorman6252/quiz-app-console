@@ -4,10 +4,13 @@ import models.Question
 import persistence.Serializer
 import kotlin.random.Random
 
+
+
 class QuestionAPI(serializerType: Serializer) {
 
     private var serializer: Serializer = serializerType;
     private var questions = ArrayList<Question>();
+
 
     fun addQuestion(question : Question): Boolean {
         return questions.add(question);
