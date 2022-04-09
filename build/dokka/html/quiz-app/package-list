@@ -1,0 +1,63 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:////PointingToDeclaration/quiz-app/[root]/index.html
+$dokka.location://addQuestion/#/PointingToDeclaration/quiz-app/[root]/add-question.html
+$dokka.location://deleteQuestion/#/PointingToDeclaration/quiz-app/[root]/delete-question.html
+$dokka.location://exitApp/#/PointingToDeclaration/quiz-app/[root]/exit-app.html
+$dokka.location://listQuestions/#/PointingToDeclaration/quiz-app/[root]/list-questions.html
+$dokka.location://load/#/PointingToDeclaration/quiz-app/[root]/load.html
+$dokka.location://main/#kotlin.Array[kotlin.String]/PointingToDeclaration/quiz-app/[root]/main.html
+$dokka.location://mainMenu/#/PointingToDeclaration/quiz-app/[root]/main-menu.html
+$dokka.location://numOfQuestions/#/PointingToDeclaration/quiz-app/[root]/num-of-questions.html
+$dokka.location://playGame/#/PointingToDeclaration/quiz-app/[root]/play-game.html
+$dokka.location://runMenu/#/PointingToDeclaration/quiz-app/[root]/run-menu.html
+$dokka.location://save/#/PointingToDeclaration/quiz-app/[root]/save.html
+$dokka.location://updateQuestion/#/PointingToDeclaration/quiz-app/[root]/update-question.html
+$dokka.location:controllers////PointingToDeclaration/quiz-app/controllers/index.html
+$dokka.location:controllers/QuestionAPI///PointingToDeclaration/quiz-app/controllers/-question-a-p-i/index.html
+$dokka.location:controllers/QuestionAPI/QuestionAPI/#persistence.Serializer/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/-question-a-p-i.html
+$dokka.location:controllers/QuestionAPI/addQuestion/#models.Question/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/add-question.html
+$dokka.location:controllers/QuestionAPI/allQuestionsByAscendingDifficulty/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/all-questions-by-ascending-difficulty.html
+$dokka.location:controllers/QuestionAPI/allQuestionsByDescendingDifficulty/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/all-questions-by-descending-difficulty.html
+$dokka.location:controllers/QuestionAPI/findQuestion/#kotlin.Int/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/find-question.html
+$dokka.location:controllers/QuestionAPI/isValidIndex/#kotlin.Int/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/is-valid-index.html
+$dokka.location:controllers/QuestionAPI/isValidListIndex/#kotlin.Int#kotlin.collections.List[kotlin.Any]/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/is-valid-list-index.html
+$dokka.location:controllers/QuestionAPI/listAllQuestions/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/list-all-questions.html
+$dokka.location:controllers/QuestionAPI/load/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/load.html
+$dokka.location:controllers/QuestionAPI/numberOfQuestions/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/number-of-questions.html
+$dokka.location:controllers/QuestionAPI/randomQuestion/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/random-question.html
+$dokka.location:controllers/QuestionAPI/removeQuestion/#kotlin.Int/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/remove-question.html
+$dokka.location:controllers/QuestionAPI/store/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/store.html
+$dokka.location:controllers/QuestionAPI/updateQuestion/#kotlin.Int#models.Question?/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/update-question.html
+$dokka.location:controllers/QuestionAPI/updateQuestionObjectFormat/#/PointingToDeclaration/quiz-app/controllers/-question-a-p-i/update-question-object-format.html
+$dokka.location:models////PointingToDeclaration/quiz-app/models/index.html
+$dokka.location:models/Question///PointingToDeclaration/quiz-app/models/-question/index.html
+$dokka.location:models/Question/Question/#kotlin.Int#kotlin.String#kotlin.Array[kotlin.String?]#kotlin.String#kotlin.Int/PointingToDeclaration/quiz-app/models/-question/-question.html
+$dokka.location:models/Question/possibleAnswers/#/PointingToDeclaration/quiz-app/models/-question/possible-answers.html
+$dokka.location:models/Question/questionAnswer/#/PointingToDeclaration/quiz-app/models/-question/question-answer.html
+$dokka.location:models/Question/questionDifficultyLevel/#/PointingToDeclaration/quiz-app/models/-question/question-difficulty-level.html
+$dokka.location:models/Question/questionNumber/#/PointingToDeclaration/quiz-app/models/-question/question-number.html
+$dokka.location:models/Question/theQuestion/#/PointingToDeclaration/quiz-app/models/-question/the-question.html
+$dokka.location:persistence////PointingToDeclaration/quiz-app/persistence/index.html
+$dokka.location:persistence/JSONSerializer///PointingToDeclaration/quiz-app/persistence/-j-s-o-n-serializer/index.html
+$dokka.location:persistence/JSONSerializer/JSONSerializer/#java.io.File/PointingToDeclaration/quiz-app/persistence/-j-s-o-n-serializer/-j-s-o-n-serializer.html
+$dokka.location:persistence/JSONSerializer/read/#/PointingToDeclaration/quiz-app/persistence/-j-s-o-n-serializer/read.html
+$dokka.location:persistence/JSONSerializer/write/#kotlin.Any?/PointingToDeclaration/quiz-app/persistence/-j-s-o-n-serializer/write.html
+$dokka.location:persistence/Serializer///PointingToDeclaration/quiz-app/persistence/-serializer/index.html
+$dokka.location:persistence/Serializer/read/#/PointingToDeclaration/quiz-app/persistence/-serializer/read.html
+$dokka.location:persistence/Serializer/write/#kotlin.Any?/PointingToDeclaration/quiz-app/persistence/-serializer/write.html
+$dokka.location:persistence/XMLSerializer///PointingToDeclaration/quiz-app/persistence/-x-m-l-serializer/index.html
+$dokka.location:persistence/XMLSerializer/XMLSerializer/#java.io.File/PointingToDeclaration/quiz-app/persistence/-x-m-l-serializer/-x-m-l-serializer.html
+$dokka.location:persistence/XMLSerializer/read/#/PointingToDeclaration/quiz-app/persistence/-x-m-l-serializer/read.html
+$dokka.location:persistence/XMLSerializer/write/#kotlin.Any?/PointingToDeclaration/quiz-app/persistence/-x-m-l-serializer/write.html
+$dokka.location:utils////PointingToDeclaration/quiz-app/utils/index.html
+$dokka.location:utils/ScannerInput///PointingToDeclaration/quiz-app/utils/-scanner-input/index.html
+$dokka.location:utils/ScannerInput/readNextChar/#kotlin.String?/PointingToDeclaration/quiz-app/utils/-scanner-input/read-next-char.html
+$dokka.location:utils/ScannerInput/readNextDouble/#kotlin.String?/PointingToDeclaration/quiz-app/utils/-scanner-input/read-next-double.html
+$dokka.location:utils/ScannerInput/readNextInt/#kotlin.String?/PointingToDeclaration/quiz-app/utils/-scanner-input/read-next-int.html
+$dokka.location:utils/ScannerInput/readNextLine/#kotlin.String?/PointingToDeclaration/quiz-app/utils/-scanner-input/read-next-line.html
+controllers
+models
+persistence
+utils
+
