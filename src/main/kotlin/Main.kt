@@ -3,6 +3,7 @@ import models.Question
 import utils.ScannerInput
 import utils.ScannerInput.readNextLine
 import java.lang.Integer.parseInt
+import java.lang.System.exit
 
 private val qAPI = QuestionAPI();
 
@@ -42,7 +43,7 @@ fun runMenu() {
             6 -> listQuestions();
          //   7 -> saveQuestions();
         //    8 -> loadQuestions();
-          //  0 -> exitApp();
+            0 -> exitApp();
             else -> println("Invalid choice entered: $option. Please try again!");
         }
     } while(true);
@@ -186,7 +187,18 @@ fun listQuestions() {
             else -> println("Invalid choice entered!");
         }
     }
+}
 
+fun exitApp() {
+    println("Exiting application. We hope to see you again soon!");
+    Thread.sleep(1000);
+    println("3");
+    Thread.sleep(1000);
+    println("2");
+    Thread.sleep(1000);
+    println("1");
+    println("-----------------------------------------------------");
+    exit(0);
 }
 
 
