@@ -1,9 +1,12 @@
 package controllers
 
 import models.Question
+import persistence.Serializer
 import kotlin.random.Random
 
-class QuestionAPI {
+class QuestionAPI(serializerType: Serializer) {
+
+    private var serializer: Serializer = serializerType;
     private var questions = ArrayList<Question>();
 
     fun addQuestion(question : Question): Boolean {
@@ -111,6 +114,17 @@ class QuestionAPI {
     fun isValidIndex(index: Int) : Boolean {
         return isValidListIndex(index, questions);
     }
+
+    @Throws(Exception::class)
+    fun load() {
+        questions = serializer.read() as ArrayList<Question>
+    }
+
+    @Throws(Exception::class)
+    fun store() {
+        serializer.write(questions)
+    }
+
 }
 
 
