@@ -1,13 +1,17 @@
 import controllers.QuestionAPI
 import models.Question
+import persistence.XMLSerializer
 import utils.ScannerInput
 import utils.ScannerInput.readNextLine
+import java.io.File
 import java.io.LineNumberReader
 import java.lang.Integer.parseInt
 import java.lang.System.currentTimeMillis
 import java.lang.System.exit
 
-private val qAPI = QuestionAPI();
+//private val qAPI = QuestionAPI(XMLSerializer(File("questions.xml")));
+private val qAPI = QuestionAPI(XMLSerializer(File("questions.json")));
+
 
 fun main(args: Array<String>) {
     runMenu();
@@ -24,11 +28,11 @@ fun mainMenu() : Int {
         > |   3) Delete a Question         |  
         > |   4) Number of Questions in App |         
         > |   5) Update a Question          |
-        > |   6) List Questions - (Sub-menu) |
-        > |   7) Save Question(s) (NOT IMPLEMENTED YET) |
-        > |   8) Load Question(s) (NOT IMPLEMENTED YET) |
+        > |   6) List Questions - (Sub-menu)|
+        > |   7) Save Question(s)           |
+        > |   8) Load Question(s)           |
         > ----------------------------------
-        > |   0) Exit                      |
+        > |   0) Exit                       |
         > ----------------------------------
         > ==>> """.trimMargin(">"))
 }
@@ -43,8 +47,8 @@ fun runMenu() {
             4 -> numOfQuestions();
             5 -> updateQuestion();
             6 -> listQuestions();
-         //   7 -> saveQuestions();
-        //    8 -> loadQuestions();
+            7 -> save();
+            8 -> load();
             0 -> exitApp();
             else -> println("Invalid choice entered: $option. Please try again!");
         }
@@ -339,6 +343,24 @@ fun listQuestions() {
         }
     }
 }
+
+
+fun save() {
+    try {
+        qAPI.store()
+    } catch (e: Exception) {
+        System.err.println("Error writing to file: $e")
+    }
+}
+
+fun load() {
+    try {
+        qAPI.load()
+    } catch (e: Exception) {
+        System.err.println("Error reading from file: $e")
+    }
+}
+
 
 fun exitApp() {
     println("Exiting application. We hope to see you again soon!");
