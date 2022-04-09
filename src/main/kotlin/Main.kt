@@ -4,6 +4,7 @@ import utils.ScannerInput
 import utils.ScannerInput.readNextLine
 import java.io.LineNumberReader
 import java.lang.Integer.parseInt
+import java.lang.System.currentTimeMillis
 import java.lang.System.exit
 
 private val qAPI = QuestionAPI();
@@ -36,7 +37,7 @@ fun runMenu() {
     do {
         val option = mainMenu();
         when(option) {
-       //     1 -> playGame();
+            1 -> playGame();
             2 -> addQuestion();
             3 -> deleteQuestion();
             4 -> numOfQuestions();
@@ -50,6 +51,98 @@ fun runMenu() {
     } while(true);
 }
 
+fun playGame() {
+
+    if(qAPI.numberOfQuestions() == 0) {
+        println("There are no Questions in the System. Add one!");
+        return;
+    }
+
+    println("---------------");
+    println("PLAY GAME!!");
+    println("---------------");
+
+    try {
+
+        var numOfQuestions = 0;
+
+            do {
+                numOfQuestions = parseInt(readNextLine("Enter how many questions you want to be asked? (1-10): "));
+
+                if(numOfQuestions <= 0) {
+                    println("Number is too low. Please try again!");
+                } else if(numOfQuestions > 10) {
+                    println("Number is too high. Please try again!");
+                } else if(qAPI.numberOfQuestions() < numOfQuestions) {
+                    println("There are/is only ${qAPI.numberOfQuestions()} question(s) in the System. You will need to choose a lower number for each question to be unique!");
+                }
+                else {
+                    println("GET READY TO PLAY THE GAME!");
+                    println("-----------------------------------");
+
+                    Thread.sleep(1000);
+                    println("3!")
+                    Thread.sleep(1000);
+                    println("2!");
+                    Thread.sleep(1000);
+                    println("1!");
+                    println("GO!")
+                    println("-----------------------------------");
+
+
+                    var numberOfCorrectAnswers = 0;
+                    var timeBeforeGuess = 0;
+                    var timeAfterGuess = 0;
+
+                    for(i in 1..numOfQuestions) {
+                        var question = qAPI.randomQuestion();
+                        println("Question: $i");
+                        println("----------------------------");
+                        if (question != null) {
+                            println("Q: " + question.theQuestion);
+                            println("Difficulty Level: " + question.questionDifficultyLevel);
+                            for(i in 0..3) {
+                                println("Possible Answer " + (i+1) + ": " + question.possibleAnswers[i]);
+                            }
+
+                                timeBeforeGuess = currentTimeMillis().toInt();
+                                var userGuess = readNextLine("Enter Question Guess (Word-for-Word): ");
+                                timeAfterGuess = currentTimeMillis().toInt();
+
+                                if(userGuess == question.questionAnswer) {
+                                    numberOfCorrectAnswers++;
+                                    println("CORRECT!");
+                                    println("It took you: ${(timeAfterGuess - timeBeforeGuess) / 1000} seconds to answer that question!");
+                                    qAPI.removeQuestion(question.questionNumber-1); // removes question to stop multiple occurrences
+                                    println("------------------------------------");
+                                } else {
+                                    println("INCORRECT, SORRY!");
+                                    qAPI.removeQuestion(question.questionNumber-1); // removes question to stop multiple occurrences
+                                    println("------------------------------------");
+                                }
+                            println("Moving onto the next question....");
+                            println("------------------------------------");
+
+                        } else {
+                            println("Something went wrong!");
+                        }
+
+                    }
+
+                    println("You got a total of $numberOfCorrectAnswers / $numOfQuestions");
+                    println("---------------------------------------------------------------");
+                }
+
+            } while(numOfQuestions <= 0 || numOfQuestions > 10);
+
+
+    } catch(nfe: NumberFormatException) {
+        println("Please enter a Number!");
+    } catch(e : Exception) {
+        println("Something went wrong!");
+    }
+}
+
 fun addQuestion() {
     while(true) {
         println("----- Adding a Question -----\n");
@@ -57,7 +150,8 @@ fun addQuestion() {
         var questionNumber = 0;
         while (true) {
             try {
-                questionNumber = parseInt(readNextLine("Enter the Question Number here: "));
+               // questionNumber = parseInt(readNextLine("Enter the Question Number here: "));
+                questionNumber = qAPI.numberOfQuestions()+1;
                 break;
             } catch (nfe: NumberFormatException) {
                 println("Please enter a number!");
@@ -66,12 +160,14 @@ fun addQuestion() {
             }
         }
 
-        var theQuestion = readNextLine("Enter the Question here: ");
-
+        var theQuestion = "";
+        while(theQuestion.isEmpty()) {
+             theQuestion = readNextLine("Enter the Question here: ");
+        }
         var possibleAnswers: Array<String?> = arrayOfNulls(4);
 
-        for (i in 0 until possibleAnswers.size-1) {
-            println("Possible Answer (" + (i + 1) + " of 3): ");
+        for (i in 0 until possibleAnswers.size) {
+            println("Possible Answer (" + (i + 1) + " of 4): ");
             println("------------------------------------------");
             possibleAnswers[i] = readNextLine("Enter possible answer here: ");
         }
