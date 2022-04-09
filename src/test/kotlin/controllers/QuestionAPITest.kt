@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test
 import persistence.XMLSerializer
 import java.io.File
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
@@ -102,6 +103,27 @@ class QuestionAPITest {
             assertEquals(result, questionStoreListing!!.listAllQuestions());
         }
     }
+
+
+
+    @Nested
+    inner class UpdateQuestions {
+        @Test
+        fun `updating a question which doesn't exist will throw a false result back`(){
+            var possibleAnswers4 = arrayOf<String?>("Paris", "London", "Tokyo", "Melbourne");
+            assertFalse(questionStore!!.updateQuestion(12, Question(1, "What is the capital of France?", possibleAnswers4, "Paris", 1)))
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
     @Nested
     inner class PersistenceTests {
