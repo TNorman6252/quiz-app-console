@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test
 import persistence.XMLSerializer
 import java.io.File
 import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class QuestionAPITest {
@@ -70,6 +71,23 @@ class QuestionAPITest {
             assertEquals(0, questionStoreEmpty!!.numberOfQuestions());
             assertTrue(questionStoreEmpty!!.addQuestion(testQuestion4));
             assertEquals(1, questionStoreEmpty!!.numberOfQuestions());
+        }
+    }
+
+
+    @Nested
+    inner class RemoveQuestion {
+        @Test
+        fun `removing A Question Object from a populated ArrayList`() {
+            var possibleAnswers4 = arrayOf<String?>("Paris", "London", "Tokyo", "Melbourne");
+            val testQuestion4 = Question(1, "What is the capital of France?", possibleAnswers4, "Paris", 1);
+
+            assertEquals(3, questionStore!!.numberOfQuestions());
+            assertTrue(questionStore!!.addQuestion(testQuestion4));
+            assertEquals(4, questionStore!!.numberOfQuestions());
+            //important line below:
+            assertNotNull(questionStore!!.removeQuestion(0));
+            assertEquals(3, questionStore!!.numberOfQuestions());
         }
     }
 }
