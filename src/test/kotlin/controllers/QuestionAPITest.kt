@@ -27,6 +27,7 @@ class QuestionAPITest {
 
     private var questionStore: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
     private var questionStoreEmpty: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
+    private var questionStoreListing: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
 
 
     @BeforeEach
@@ -88,6 +89,17 @@ class QuestionAPITest {
             //important line below:
             assertNotNull(questionStore!!.removeQuestion(0));
             assertEquals(3, questionStore!!.numberOfQuestions());
+        }
+    }
+
+    @Nested
+    inner class ListingQuestions {
+        @Test
+        fun `listing questions in empty array`() {
+            var possibleAnswers4 = arrayOf<String?>("Paris", "London", "Tokyo", "Melbourne");
+            val testQuestion4 = Question(1, "What is the capital of France?", possibleAnswers4, "Paris", 1);
+            var result : String = "There are no Questions in the System. Add one!";
+            assertEquals(result, questionStoreListing!!.listAllQuestions());
         }
     }
 }
