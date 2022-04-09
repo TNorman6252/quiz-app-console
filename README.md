@@ -12,6 +12,7 @@ So far this quiz contains the following features:
 - Play Game - (finds a random question a specified number of times for the quiz).
 - Save and Load Questions to a file using XML and JSON
 - Added some basic JUnit 5 Test functions
+- Dokka Page has been added to the quiz app
 
 ###  The functionality listed above all contain "nice to have" or "quality-of-life" features that you will notice while using the app. 
 
