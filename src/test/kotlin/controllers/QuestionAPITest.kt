@@ -102,4 +102,26 @@ class QuestionAPITest {
             assertEquals(result, questionStoreListing!!.listAllQuestions());
         }
     }
+
+    @Nested
+    inner class PersistenceTests {
+
+        @Test
+        fun `persistence app crashing test method with an empty file`() {
+            // Saving an empty questions.XML file.
+            val questionStoring = QuestionAPI(XMLSerializer(File("questions.xml")))
+            questionStoring.store()
+
+            //Loading the empty questions.xml file into a new object
+            val loadedQuestions = QuestionAPI(XMLSerializer(File("questions.xml")))
+            loadedQuestions.load()
+
+            assertEquals(0, questionStoring.numberOfQuestions())
+            assertEquals(0, loadedQuestions.numberOfQuestions())
+            assertEquals(questionStoring.numberOfQuestions(), loadedQuestions.numberOfQuestions())
+        }
+
+
+    }
+
 }
