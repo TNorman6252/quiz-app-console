@@ -32,6 +32,18 @@ class QuestionAPI {
         }
     }
 
+    fun updateQuestionObjectFormat(): String {
+        return if(questions.isEmpty()) {
+            "There are no Questions in the System. Add one!"
+        } else {
+            var listOfAllQuestions = "";
+            for(q in questions) {
+                listOfAllQuestions += "$q\n";
+            }
+            listOfAllQuestions
+        }
+    }
+
     fun updateQuestion(indexToUpdate: Int, question: Question?): Boolean {
         val updateQuestion = findQuestion(indexToUpdate);
 
@@ -94,6 +106,10 @@ class QuestionAPI {
 
     fun isValidListIndex(index: Int, list: List<Any>): Boolean {
         return (index >= 0 && index < list.size)
+    }
+
+    fun isValidIndex(index: Int) : Boolean {
+        return isValidListIndex(index, questions);
     }
 }
 
