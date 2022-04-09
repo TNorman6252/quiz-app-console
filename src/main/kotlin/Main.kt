@@ -36,7 +36,7 @@ fun runMenu() {
         when(option) {
        //     1 -> playGame();
             2 -> addQuestion();
-        //    3 -> deleteQuestion();
+            3 -> deleteQuestion();
          //   4 -> numOfQuestions();
          //   5 -> updateQuestion();
             6 -> listQuestions();
@@ -106,6 +106,52 @@ fun addQuestion() {
             break;
         }
     }
+}
+
+
+fun deleteQuestion() {
+
+    if(qAPI.numberOfQuestions() == 0) {
+        println("There are no questions in the System. Add one!");
+        return;
+    }
+
+    while(true) {
+    println("--- Deleting a Question ---");
+    println("---------------------------------");
+    println("List of all Questions: ");
+    println(qAPI.listAllQuestions());
+    println("---------------------------------");
+
+        var choice = 0;
+    try {
+         choice = parseInt(readNextLine("Enter Question Number to be deleted: "));
+
+        if(qAPI.removeQuestion(choice-1) != null) {
+            println("Question has been successfully deleted!");
+
+            if(qAPI.numberOfQuestions() == 0) {
+                break;
+            } else {
+                var option = readNextLine("Would you like to delete another question? (Y/N): ");
+                if(option.uppercase() != "Y") {
+                    break;
+                }
+            }
+
+        } else {
+            println("Invalid question number was entered. Please try again!");
+        }
+
+    } catch(nfe: NumberFormatException) {
+        println("Please Enter a Number!");
+    } catch(e : Exception) {
+        println("Something went wrong!");
+    }
+
+
+   }
+
 }
 
 fun listQuestions() {
