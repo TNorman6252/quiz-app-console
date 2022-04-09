@@ -39,7 +39,7 @@ fun runMenu() {
         //    3 -> deleteQuestion();
          //   4 -> numOfQuestions();
          //   5 -> updateQuestion();
-          //  6 -> listQuestions();
+            6 -> listQuestions();
          //   7 -> saveQuestions();
         //    8 -> loadQuestions();
           //  0 -> exitApp();
@@ -106,8 +106,39 @@ fun addQuestion() {
             break;
         }
     }
+}
+
+fun listQuestions() {
+    while(true) {
+        println("QUIZ SUB-MENU: ");
+        println("--------------------------------------");
+        println(" 1) List all Questions");
+        println(" 2) List Questions by difficulty (ascending order)")
+        println(" 3) List Questions by difficulty (descending order)");
+        println("---------------------------------------");
+        println(" 0) Exit Sub-Menu");
+        println("---------------------------------------");
+
+        var userChoice = 0;
+        try {
+             userChoice = parseInt(readNextLine("Enter Choice [1-3]: "));
+        } catch(nfe : NumberFormatException) {
+            println("Please Enter a Number!");
+        } catch(e : Exception) {
+            println("Something went wrong!");
+        }
+        when (userChoice) {
+            1 -> println("---You chose: List All Questions---\n" + qAPI.listAllQuestions());
+            2 -> println("---You chose: List by Ascending Order---\n" + qAPI.allQuestionsByAscendingDifficulty());
+            3 -> println("---You chose: List by Descending Order---\n" + qAPI.allQuestionsByDescendingDifficulty());
+            0 -> break;
+            else -> println("Invalid choice entered!");
+        }
+    }
 
 }
+
+
 
 
 

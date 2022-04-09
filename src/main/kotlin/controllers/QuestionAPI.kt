@@ -47,6 +47,11 @@ class QuestionAPI {
     }
 
     fun allQuestionsByAscendingDifficulty(): String {
+
+        if(questions.isEmpty()) {
+            return "There are no Questions in the System. Add one!";
+        }
+
         var allQuestions = "";
         var orderedQuestions = questions.sortedBy { it.questionDifficultyLevel }
 
@@ -57,6 +62,11 @@ class QuestionAPI {
     }
 
     fun allQuestionsByDescendingDifficulty(): String {
+
+        if(questions.isEmpty()) {
+            return "There are no Questions in the System. Add one!";
+        }
+
         var allQuestions = "";
         var orderedQuestions = questions.sortedByDescending { it.questionDifficultyLevel }
 
