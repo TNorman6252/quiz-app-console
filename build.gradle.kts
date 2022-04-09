@@ -4,6 +4,8 @@ plugins {
     kotlin("jvm") version "1.5.10"
     //Plugin for Dokka -KDoc generating tool
     id("org.jetbrains.dokka") version "1.6.10"
+    //Plugin for Ktlint
+    id("org.jlleitschuh.gradle.ktlint") version "10.2.1"
     application
 
 }
