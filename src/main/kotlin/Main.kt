@@ -37,7 +37,7 @@ fun runMenu() {
        //     1 -> playGame();
             2 -> addQuestion();
             3 -> deleteQuestion();
-         //   4 -> numOfQuestions();
+            4 -> numOfQuestions();
          //   5 -> updateQuestion();
             6 -> listQuestions();
          //   7 -> saveQuestions();
@@ -152,6 +152,11 @@ fun deleteQuestion() {
 
    }
 
+}
+
+fun numOfQuestions() {
+    println("Number of Questions stored in app: ${qAPI.numberOfQuestions()}");
+    println("-----------------------------------------------------------------");
 }
 
 fun listQuestions() {
