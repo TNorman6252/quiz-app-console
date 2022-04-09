@@ -56,6 +56,16 @@ class QuestionAPI {
         return allQuestions;
     }
 
+    fun allQuestionsByDescendingDifficulty(): String {
+        var allQuestions = "";
+        var orderedQuestions = questions.sortedByDescending { it.questionDifficultyLevel }
+
+        for(q in orderedQuestions) {
+            allQuestions += "Question Number: ${q.questionNumber}\n" + "Question: ${q.theQuestion}\n " + "Question Difficulty Level: ${q.questionDifficultyLevel}\n";
+        }
+        return allQuestions;
+    }
+
     fun randomQuestion(): Question? {
 
         if(questions.isEmpty()) {
