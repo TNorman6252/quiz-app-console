@@ -1,0 +1,16 @@
+<object-stream>
+  <list>
+    <models.Question>
+      <questionNumber>1</questionNumber>
+      <theQuestion>What is the population of Ireland?</theQuestion>
+      <possibleAnswers>
+        <string>1 million</string>
+        <string>2 million</string>
+        <string>3 million</string>
+        <string>4 million</string>
+      </possibleAnswers>
+      <questionAnswer>4 million</questionAnswer>
+      <questionDifficultyLevel>1</questionDifficultyLevel>
+    </models.Question>
+  </list>
+</object-stream>

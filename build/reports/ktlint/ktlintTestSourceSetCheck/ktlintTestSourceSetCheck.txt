@@ -1,0 +1,56 @@
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m1[90m:1:[0m File must end with a newline (\n)
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m17[90m:47:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m18[90m:48:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m19[90m:48:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m21[90m:109:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m22[90m:110:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m23[90m:109:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m25[90m:1:[0m Needless blank line(s)
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m29[90m:96:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m30[90m:101:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m31[90m:103:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m33[90m:1:[0m Needless blank line(s)
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m36[90m:92:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m37[90m:101:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m38[90m:102:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m40[90m:9:[0m Missing space after //
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m41[90m:52:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m42[90m:53:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m43[90m:53:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m48[90m:28:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m49[90m:29:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m50[90m:29:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m51[90m:29:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m52[90m:34:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m55[90m:1:[0m Needless blank line(s)
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m60[90m:93:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m61[90m:108:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m63[90m:65:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m64[90m:67:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m65[90m:65:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m70[90m:93:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m71[90m:108:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m73[90m:70:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m74[90m:72:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m75[90m:70:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m79[90m:1:[0m Needless blank line(s)
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m84[90m:93:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m85[90m:108:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m87[90m:65:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m88[90m:67:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m89[90m:65:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m90[90m:13:[0m Missing space after //
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m91[90m:61:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m92[90m:65:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m100[90m:93:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m101[90m:108:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m102[90m:24:[0m Unexpected spacing before ":"
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m102[90m:83:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m103[90m:76:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m107[90m:1:[0m Needless blank line(s)
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m112[90m:87:[0m Missing spacing before "{"
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m113[90m:93:[0m Unnecessary semicolon
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m127[90m:13:[0m Missing space after //
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m135[90m:1:[0m Unexpected blank line(s) before "}"
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m136[90m:1:[0m Needless blank line(s)
+[90mC:\Users\35387\IdeaProjects\quiz-app\src\test\kotlin\controllers\[0mQuestionAPITest.kt[90m:[0m138[90m:1:[0m Unexpected blank line(s) before "}"
