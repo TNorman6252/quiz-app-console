@@ -29,6 +29,7 @@ class QuestionAPITest {
     private var questionStore: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
     private var questionStoreEmpty: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
     private var questionStoreListing: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
+    private var questionStorePopulated: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
 
 
     @BeforeEach
@@ -131,6 +132,35 @@ class QuestionAPITest {
             assertEquals(0, questionStoring.numberOfQuestions())
             assertEquals(0, loadedQuestions.numberOfQuestions())
             assertEquals(questionStoring.numberOfQuestions(), loadedQuestions.numberOfQuestions())
+        }
+
+
+    }
+
+    @Nested
+    inner class ClearAllQuestionsTest {
+
+        @Test
+        fun `clear all questions with two question objects`() {
+            testQuestion = Question(1, "How old is Earth?", possibleAnswers1, "4.8 billion", 2);
+            testQuestion2 = Question(2, "How old is the universe?", possibleAnswers2, "13.8 billion", 4);
+            testQuestion3 = Question(3, "What is the capital of Ireland?", possibleAnswers3, "Dublin", 1);
+
+
+            assertEquals(0, questionStorePopulated!!.numberOfQuestions());
+
+
+            //adding Question objects
+            questionStorePopulated!!.addQuestion(testQuestion!!);
+            questionStorePopulated!!.addQuestion(testQuestion2!!);
+            questionStorePopulated!!.addQuestion(testQuestion3!!);
+
+            //Making sure that these objects have been added successfully
+            assertEquals(3, questionStorePopulated!!.numberOfQuestions());
+
+            questionStorePopulated!!.deleteAllQuestions();
+
+            assertEquals(0, questionStorePopulated!!.numberOfQuestions());
         }
 
 
