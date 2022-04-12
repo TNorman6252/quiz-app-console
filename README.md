@@ -14,6 +14,8 @@ So far this quiz contains the following features:
 - Added some basic JUnit 5 Test functions
 - Dokka Page has been added to the quiz app
 
+#### Latest version of the quiz-app include various bug fixes, input validation improvements, a delete questions sub-menu with two options!
+
 ###  The functionality listed above all contain "nice to have" or "quality-of-life" features that you will notice while using the app. 
 
 
