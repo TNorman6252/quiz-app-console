@@ -174,6 +174,10 @@ fun addQuestion() {
             println("Possible Answer (" + (i + 1) + " of 4): ");
             println("------------------------------------------");
             possibleAnswers[i] = readNextLine("Enter possible answer here: ");
+
+            while(possibleAnswers[i]?.isEmpty() == true) {
+                possibleAnswers[i] = readNextLine("Please enter something for Possible Answer " + (i+1) + ": ");
+            }
         }
 
         var answer = "";
@@ -293,6 +297,10 @@ fun updateQuestion() {
                     println("Possible Answer (" + (i + 1) + " of 4): ");
                     println("------------------------------------------");
                     possibleAnswers[i] = readNextLine("Enter possible answer to update: ");
+
+                    while(possibleAnswers[i]?.isEmpty() == true) {
+                        possibleAnswers[i] = readNextLine("Please enter something for Possible Answer " + (i+1) + ": ");
+                    }
                 }
 
                 var answer = "";
@@ -335,6 +343,8 @@ fun updateQuestion() {
 
 
 
+            } else {
+                println("Invalid Question Index. Returning to Main Menu!");
             }
 
         } catch (nfe: NumberFormatException) {
