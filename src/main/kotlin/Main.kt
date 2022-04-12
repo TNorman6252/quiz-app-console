@@ -176,13 +176,20 @@ fun addQuestion() {
             possibleAnswers[i] = readNextLine("Enter possible answer here: ");
         }
 
-        var answer = readNextLine("Enter the answer to the question here: ");
+        var answer = "";
+        while(answer.isEmpty()) {
+             answer = readNextLine("Enter the answer to the question here: ");
+        }
 
         var questionDifficultyLevel = 0;
         while (true) {
             try {
                 questionDifficultyLevel = parseInt(readNextLine("Enter question difficulty level here (1-5):"));
-                break;
+                if(questionDifficultyLevel < 1 || questionDifficultyLevel > 5 || questionDifficultyLevel == 0) { // if it equals zero, that means the user didn't enter a value and won't break out of the loop (user validation)
+                    println("Please enter a number between 1 and 5!");
+                } else {
+                    break;
+                }
             } catch (nfe: NumberFormatException) {
                 println("Please enter a number!");
             } catch (e: Exception) {
