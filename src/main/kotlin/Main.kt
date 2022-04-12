@@ -281,36 +281,59 @@ fun updateQuestion() {
 
             if (qAPI.isValidIndex(indexToUpdate-1)) {
                 var questionNumber = parseInt(readNextLine("Enter question number to update: "));
-                var theQuestion = readNextLine("Enter question to update: ");
+
+                var question = "";
+                while(question.isEmpty()) {
+                    question = readNextLine("Enter question to update: ");
+                }
 
                 var possibleAnswers: Array<String?> = arrayOfNulls(4);
 
-                for (i in 0 until possibleAnswers.size - 1) {
-                    println("Possible Answer (" + (i + 1) + " of 3): ");
+                for (i in 0 until possibleAnswers.size) {
+                    println("Possible Answer (" + (i + 1) + " of 4): ");
                     println("------------------------------------------");
                     possibleAnswers[i] = readNextLine("Enter possible answer to update: ");
                 }
 
-                var answer = readNextLine("Enter the answer to update: ");
+                var answer = "";
+                while(answer.isEmpty()) {
+                     answer = readNextLine("Enter the answer to update: ");
+                }
 
-                try {
-                    var questionDifficultyLevel = parseInt(readNextLine("Enter difficulty level (1-5) to update: "));
+                var questionDifficultyLevel = 0;
 
+                while(true) {
 
-                    if (qAPI.updateQuestion(
-                            indexToUpdate-1,
-                            Question(questionNumber, theQuestion, possibleAnswers, answer, questionDifficultyLevel)
-                        )
-                    ) {
-                        println("Successfully updated Question!");
-                    } else {
+                    try {
+
+                        questionDifficultyLevel = parseInt(readNextLine("Enter difficulty level (1-5) to update: "));
+
+                        if (questionDifficultyLevel < 1 || questionDifficultyLevel > 5 || questionDifficultyLevel == 0) { // if it equals zero, that means the user didn't enter a value and won't break out of the loop (user validation)
+                            println("Please enter a number between 1 and 5!");
+                        } else {
+                            break;
+                        }
+                    } catch (nfe: NumberFormatException) {
+                        println("Please enter a Number!");
+                    } catch (e: Exception) {
                         println("Something went wrong!");
                     }
-                } catch (nfe: NumberFormatException) {
-                    println("Please enter a Number!");
-                } catch (e: Exception) {
-                    println("Something went wrong!");
                 }
+
+
+
+
+                        if (qAPI.updateQuestion(
+                                indexToUpdate - 1,
+                                Question(questionNumber, question, possibleAnswers, answer, questionDifficultyLevel)
+                            )
+                        ) {
+                            println("Successfully updated Question!");
+                        } else {
+                            println("Something went wrong!");
+                        }
+
+
 
             }
 
