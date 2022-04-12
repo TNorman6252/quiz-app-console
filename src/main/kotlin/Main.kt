@@ -239,21 +239,29 @@ fun deleteQuestion() {
         var choice = 0;
     try {
          choice = parseInt(readNextLine("Enter Question Number to be deleted: "));
+        //are you sure you want to delete this question? - prompt
+        println("---------------------------------------------");
+        var answer = readNextLine("Are you sure you want to delete this question? (Y/N): ");
+        if(answer.uppercase() == "Y") {
 
-        if(qAPI.removeQuestion(choice-1) != null) {
-            println("Question has been successfully deleted!");
 
-            if(qAPI.numberOfQuestions() == 0) {
-                break;
-            } else {
-                var option = readNextLine("Would you like to delete another question? (Y/N): ");
-                if(option.uppercase() != "Y") {
+            if (qAPI.removeQuestion(choice - 1) != null) {
+                println("Question has been successfully deleted!");
+
+                if (qAPI.numberOfQuestions() == 0) {
                     break;
+                } else {
+                    var option = readNextLine("Would you like to delete another question? (Y/N): ");
+                    if (option.uppercase() != "Y") {
+                        break;
+                    }
                 }
-            }
 
+            } else {
+                println("Invalid question number was entered. Please try again!");
+            }
         } else {
-            println("Invalid question number was entered. Please try again!");
+            println("Okay, that question hasn't been removed!");
         }
 
     } catch(nfe: NumberFormatException) {
