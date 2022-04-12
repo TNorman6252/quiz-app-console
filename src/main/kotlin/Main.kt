@@ -236,7 +236,9 @@ fun deleteQuestion() {
             println("1) Delete a particular question");
             println("2) Delete all questions");
             println("-------------------------------");
-            var userChoice = parseInt(readNextLine("Enter choice [1-2]: "));
+            println("0) Exit back to Main Menu");
+            println("-------------------------------");
+            var userChoice = parseInt(readNextLine("Enter choice [0-2]: "));
 
             if (userChoice == 2) {
                 qAPI.deleteAllQuestions();
@@ -246,7 +248,12 @@ fun deleteQuestion() {
             } else if(userChoice == 1) {
                 println("Bringing you to a different menu...");
                 break;
-            } else {
+            } else if(userChoice == 0) {
+                println("Heading back to the Main Menu now!");
+                println("-------------------------------------");
+                return;
+            }
+            else {
                 println("Please Enter a valid number!");
             }
         } catch (nfe: NumberFormatException) {
