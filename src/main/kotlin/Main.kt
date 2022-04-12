@@ -284,7 +284,10 @@ fun updateQuestion() {
             var indexToUpdate = parseInt(readNextLine("Enter the index of the Question to update here: "));
 
             if (qAPI.isValidIndex(indexToUpdate-1)) {
-                var questionNumber = parseInt(readNextLine("Enter question number to update: "));
+
+                var questionObject = qAPI.findQuestion(indexToUpdate-1);
+             //   var questionNumber = parseInt(readNextLine("Enter question number to update: "));
+                var questionNumber = questionObject?.questionNumber;
 
                 var question = "";
                 while(question.isEmpty()) {
@@ -333,7 +336,7 @@ fun updateQuestion() {
 
                         if (qAPI.updateQuestion(
                                 indexToUpdate - 1,
-                                Question(questionNumber, question, possibleAnswers, answer, questionDifficultyLevel)
+                                questionNumber?.let { Question(it, question, possibleAnswers, answer, questionDifficultyLevel) }
                             )
                         ) {
                             println("Successfully updated Question!");
