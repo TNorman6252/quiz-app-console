@@ -174,15 +174,26 @@ fun addQuestion() {
             println("Possible Answer (" + (i + 1) + " of 4): ");
             println("------------------------------------------");
             possibleAnswers[i] = readNextLine("Enter possible answer here: ");
+
+            while(possibleAnswers[i]?.isEmpty() == true) {
+                possibleAnswers[i] = readNextLine("Please enter something for Possible Answer " + (i+1) + ": ");
+            }
         }
 
-        var answer = readNextLine("Enter the answer to the question here: ");
+        var answer = "";
+        while(answer.isEmpty()) {
+             answer = readNextLine("Enter the answer to the question here: ");
+        }
 
         var questionDifficultyLevel = 0;
         while (true) {
             try {
                 questionDifficultyLevel = parseInt(readNextLine("Enter question difficulty level here (1-5):"));
-                break;
+                if(questionDifficultyLevel < 1 || questionDifficultyLevel > 5 || questionDifficultyLevel == 0) { // if it equals zero, that means the user didn't enter a value and won't break out of the loop (user validation)
+                    println("Please enter a number between 1 and 5!");
+                } else {
+                    break;
+                }
             } catch (nfe: NumberFormatException) {
                 println("Please enter a number!");
             } catch (e: Exception) {
@@ -228,21 +239,29 @@ fun deleteQuestion() {
         var choice = 0;
     try {
          choice = parseInt(readNextLine("Enter Question Number to be deleted: "));
+        //are you sure you want to delete this question? - prompt
+        println("---------------------------------------------");
+        var answer = readNextLine("Are you sure you want to delete this question? (Y/N): ");
+        if(answer.uppercase() == "Y") {
 
-        if(qAPI.removeQuestion(choice-1) != null) {
-            println("Question has been successfully deleted!");
 
-            if(qAPI.numberOfQuestions() == 0) {
-                break;
-            } else {
-                var option = readNextLine("Would you like to delete another question? (Y/N): ");
-                if(option.uppercase() != "Y") {
+            if (qAPI.removeQuestion(choice - 1) != null) {
+                println("Question has been successfully deleted!");
+
+                if (qAPI.numberOfQuestions() == 0) {
                     break;
+                } else {
+                    var option = readNextLine("Would you like to delete another question? (Y/N): ");
+                    if (option.uppercase() != "Y") {
+                        break;
+                    }
                 }
-            }
 
+            } else {
+                println("Invalid question number was entered. Please try again!");
+            }
         } else {
-            println("Invalid question number was entered. Please try again!");
+            println("Okay, that question hasn't been removed!");
         }
 
     } catch(nfe: NumberFormatException) {
@@ -273,38 +292,70 @@ fun updateQuestion() {
             var indexToUpdate = parseInt(readNextLine("Enter the index of the Question to update here: "));
 
             if (qAPI.isValidIndex(indexToUpdate-1)) {
-                var questionNumber = parseInt(readNextLine("Enter question number to update: "));
-                var theQuestion = readNextLine("Enter question to update: ");
+
+                var questionObject = qAPI.findQuestion(indexToUpdate-1);
+             //   var questionNumber = parseInt(readNextLine("Enter question number to update: "));
+                var questionNumber = questionObject?.questionNumber;
+
+                var question = "";
+                while(question.isEmpty()) {
+                    question = readNextLine("Enter question to update: ");
+                }
 
                 var possibleAnswers: Array<String?> = arrayOfNulls(4);
 
-                for (i in 0 until possibleAnswers.size - 1) {
-                    println("Possible Answer (" + (i + 1) + " of 3): ");
+                for (i in 0 until possibleAnswers.size) {
+                    println("Possible Answer (" + (i + 1) + " of 4): ");
                     println("------------------------------------------");
                     possibleAnswers[i] = readNextLine("Enter possible answer to update: ");
+
+                    while(possibleAnswers[i]?.isEmpty() == true) {
+                        possibleAnswers[i] = readNextLine("Please enter something for Possible Answer " + (i+1) + ": ");
+                    }
                 }
 
-                var answer = readNextLine("Enter the answer to update: ");
+                var answer = "";
+                while(answer.isEmpty()) {
+                     answer = readNextLine("Enter the answer to update: ");
+                }
 
-                try {
-                    var questionDifficultyLevel = parseInt(readNextLine("Enter difficulty level (1-5) to update: "));
+                var questionDifficultyLevel = 0;
 
+                while(true) {
 
-                    if (qAPI.updateQuestion(
-                            indexToUpdate-1,
-                            Question(questionNumber, theQuestion, possibleAnswers, answer, questionDifficultyLevel)
-                        )
-                    ) {
-                        println("Successfully updated Question!");
-                    } else {
+                    try {
+
+                        questionDifficultyLevel = parseInt(readNextLine("Enter difficulty level (1-5) to update: "));
+
+                        if (questionDifficultyLevel < 1 || questionDifficultyLevel > 5 || questionDifficultyLevel == 0) { // if it equals zero, that means the user didn't enter a value and won't break out of the loop (user validation)
+                            println("Please enter a number between 1 and 5!");
+                        } else {
+                            break;
+                        }
+                    } catch (nfe: NumberFormatException) {
+                        println("Please enter a Number!");
+                    } catch (e: Exception) {
                         println("Something went wrong!");
                     }
-                } catch (nfe: NumberFormatException) {
-                    println("Please enter a Number!");
-                } catch (e: Exception) {
-                    println("Something went wrong!");
                 }
 
+
+
+
+                        if (qAPI.updateQuestion(
+                                indexToUpdate - 1,
+                                questionNumber?.let { Question(it, question, possibleAnswers, answer, questionDifficultyLevel) }
+                            )
+                        ) {
+                            println("Successfully updated Question!");
+                        } else {
+                            println("Something went wrong!");
+                        }
+
+
+
+            } else {
+                println("Invalid Question Index. Returning to Main Menu!");
             }
 
         } catch (nfe: NumberFormatException) {
