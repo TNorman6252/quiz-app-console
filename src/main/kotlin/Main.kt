@@ -230,6 +230,34 @@ fun deleteQuestion() {
     }
 
     while(true) {
+
+        try {
+            println("--- Delete Question Menu ---");
+            println("1) Delete a particular question");
+            println("2) Delete all questions");
+            println("-------------------------------");
+            var userChoice = parseInt(readNextLine("Enter choice [1-2]: "));
+
+            if (userChoice == 2) {
+                qAPI.deleteAllQuestions();
+                println("All questions have been successfully deleted from the System!");
+                return;
+
+            } else if(userChoice == 1) {
+                println("Bringing you to a different menu...");
+                break;
+            } else {
+                println("Please Enter a valid number!");
+            }
+        } catch (nfe: NumberFormatException) {
+            println("Please Enter A Number!");
+
+        } catch (e: Exception) {
+            println("Something went wrong!");
+        }
+    }
+
+    while(true) {
     println("--- Deleting a Question ---");
     println("---------------------------------");
     println("List of all Questions: ");
