@@ -118,6 +118,10 @@ class QuestionAPI(serializerType: Serializer) {
         return isValidListIndex(index, questions);
     }
 
+    fun deleteAllQuestions() {
+        questions.clear();
+    }
+
     @Throws(Exception::class)
     fun load() {
         questions = serializer.read() as ArrayList<Question>
