@@ -182,7 +182,36 @@ fun addQuestion() {
 
         var answer = "";
         while(answer.isEmpty()) {
-             answer = readNextLine("Enter the answer to the question here: ");
+            while(true) {
+
+                    println("Please enter an answer that corresponds with an entered possible answer below: ");
+                    println("---------------------------------------------------------------------------------");
+
+                    var possibleAnswer1 = possibleAnswers[0];
+                    var possibleAnswer2 = possibleAnswers[1];
+                    var possibleAnswer3 = possibleAnswers[2];
+                    var possibleAnswer4 = possibleAnswers[3];
+
+                    answer = readNextLine("Enter the answer to the question here: ");
+                    if (answer.lowercase().trim() == possibleAnswer1?.lowercase()?.trim()) {
+                        println("Perfect! Answer has been linked to Possible Answer: 1");
+                        break;
+                    } else if(answer.lowercase().trim() == possibleAnswer2?.lowercase()?.trim()) {
+                        println("Perfect! Answer has been linked to Possible Answer: 2");
+                        break;
+                    } else if(answer.lowercase().trim() == possibleAnswer3?.lowercase()?.trim()) {
+                        println("Perfect! Answer has been linked to Possible Answer: 3");
+                        break;
+                    } else if(answer.lowercase().trim() == possibleAnswer4?.lowercase()?.trim()) {
+                        println("Perfect! Answer has been linked to Possible Answer: 4");
+                        break;
+                    } else {
+                        println("Please try again!");
+                    }
+
+
+            }
+            // answer = readNextLine("Enter the answer to the question here: ");
         }
 
         var questionDifficultyLevel = 0;
