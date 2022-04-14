@@ -20,20 +20,22 @@ fun main(args: Array<String>) {
 fun mainMenu() : Int {
     return ScannerInput.readNextInt("""
         > ----------------------------------
-        > |        QUIZ APPLICATION        |
-        > ----------------------------------
-        > | QUIZ OPTIONS:                  |
-        > |   1) Play Quiz Game            |
-        > |   2) Add a Question            |   
-        > |   3) Delete a Question         |  
+        >   | -->  QUIZ APPLICATION  <--   |
+        > |---------------------------------|
+        > | QUIZ OPTIONS:                   |
+        > |   1) Play Quiz Game             |
+        > |   2) Add a Question             |   
+        > |   3) Delete a Question          |  
         > |   4) Number of Questions in App |         
         > |   5) Update a Question          |
         > |   6) List Questions - (Sub-menu)|
         > |   7) Save Question(s)           |
         > |   8) Load Question(s)           |
-        > ----------------------------------
+        > |---------------------------------|
+        > |   9) Answer Cheat Sheet         |
+        > |---------------------------------|
         > |   0) Exit                       |
-        > ----------------------------------
+        > ----------------------------------|
         > ==>> """.trimMargin(">"))
 }
 
@@ -49,6 +51,7 @@ fun runMenu() {
             6 -> listQuestions();
             7 -> save();
             8 -> load();
+            9 -> answerCheatSheet();
             0 -> exitApp();
             else -> println("Invalid choice entered: $option. Please try again!");
         }
@@ -485,6 +488,19 @@ fun listQuestions() {
             else -> println("Invalid choice entered!");
         }
     }
+}
+
+fun answerCheatSheet() {
+
+    if(qAPI.numberOfQuestions() == 0) {
+        println("There are no questions in the System. Add one!");
+        println("-------------------------------------------");
+        return;
+    }
+
+    println("-------------------------------------------");
+    println(qAPI.answersToAllQuestions());
+    println("-------------------------------------------");
 }
 
 

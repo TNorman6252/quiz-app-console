@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controllers.QuestionAPITest$AddQuestion" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-04-14T16:35:28" hostname="LAPTOP-0C983TGK" time="0.071">
+  <properties/>
+  <testcase name="adding A Question Object to a populated ArrayList()" classname="controllers.QuestionAPITest$AddQuestion" time="0.067"/>
+  <testcase name="adding A Question Object to an empty ArrayList()" classname="controllers.QuestionAPITest$AddQuestion" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

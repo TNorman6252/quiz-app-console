@@ -122,6 +122,14 @@ class QuestionAPI(serializerType: Serializer) {
         questions.clear();
     }
 
+    fun answersToAllQuestions() : String {
+        var answers = "";
+        for(q in questions) {
+              answers = "-----------------------\nQuestion Number: ${q.questionNumber}\nQuestion: ${q.theQuestion}\nQuestion Answer: ${q.questionAnswer}\n-----------------------";
+        }
+        return answers;
+    }
+
     @Throws(Exception::class)
     fun load() {
         questions = serializer.read() as ArrayList<Question>
