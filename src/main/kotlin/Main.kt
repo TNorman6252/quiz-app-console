@@ -113,7 +113,7 @@ fun playGame() {
                                 var userGuess = readNextLine("Enter Question Guess (Word-for-Word): ");
                                 timeAfterGuess = currentTimeMillis().toInt();
 
-                                if(userGuess.lowercase() == question.questionAnswer.lowercase()) {
+                                if(userGuess.lowercase().trim() == question.questionAnswer.lowercase().trim()) {
                                     numberOfCorrectAnswers++;
                                     println("CORRECT!");
                                     println("It took you: ${(timeAfterGuess - timeBeforeGuess) / 1000} seconds to answer that question!");
