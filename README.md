@@ -21,12 +21,13 @@ So far this quiz contains the following features:
 - Added some basic JUnit 5 Test functions
 - Dokka Page has been added to the quiz app
 - A 'Cheat Sheet Answers' feature 
+- Show all Questions by entered difficulty level
 
-### Version 4.0 is LIVE!!!!
+### Version 5.0 is LIVE!!!!
 
-#### Latest version of the quiz-app include various bug fixes, input validation improvements, a delete questions sub-menu with two options!
+#### Latest version of the quiz-app include various bug fixes, input validation improvements, a show all questions by entered difficulty level and some new ghPages additions and improvements.
 
-###  The functionality listed above all contain "nice to have" or "quality-of-life" features that you will notice while using the app. 
+###  The functionality listed above all contain "nice to have" or "quality-of-life" features that you will notice while using the app. UI/UX design and input validation have and will continue to be a huge priority while working on this app!
 
 
 <b>Stay Tuned for more updates</b>
