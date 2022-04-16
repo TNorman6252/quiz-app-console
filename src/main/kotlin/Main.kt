@@ -72,6 +72,7 @@ fun playGame() {
     try {
 
         var numOfQuestions = 0;
+        var nextQuestionMessageCounter = 0;
 
             do {
                 numOfQuestions = parseInt(readNextLine("Enter how many questions you want to be asked? (1-10): "));
@@ -84,6 +85,7 @@ fun playGame() {
                     println("There are/is only ${qAPI.numberOfQuestions()} question(s) in the System. You will need to choose a lower number for each question to be unique!");
                 }
                 else {
+                    nextQuestionMessageCounter = numOfQuestions;
                     println("GET READY TO PLAY THE GAME!");
                     println("-----------------------------------");
 
@@ -102,6 +104,7 @@ fun playGame() {
                     var timeAfterGuess = 0;
 
                     for(i in 1..numOfQuestions) {
+                        nextQuestionMessageCounter--;
                         var question = qAPI.randomQuestion();
                         println("Question: $i");
                         println("----------------------------");
@@ -129,8 +132,10 @@ fun playGame() {
                                     println("------------------------------------");
                                 }
 
-                            println("Moving onto the next question....");
-                            println("------------------------------------");
+                            if(nextQuestionMessageCounter != 0) {
+                                println("Moving onto the next question....");
+                                println("------------------------------------");
+                            }
 
                         } else {
                             println("Something went wrong!");
