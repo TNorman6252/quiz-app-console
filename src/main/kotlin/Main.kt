@@ -124,6 +124,7 @@ fun playGame() {
                                     println("------------------------------------");
                                 } else {
                                     println("INCORRECT, SORRY!");
+                                    println("The correct answer was: ${question.questionAnswer}");
                                     qAPI.removeQuestion(question.questionNumber-1); // removes question to stop multiple occurrences
                                     println("------------------------------------");
                                 }
