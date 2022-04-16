@@ -30,6 +30,8 @@ class QuestionAPITest {
     private var questionStoreEmpty: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
     private var questionStoreListing: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
     private var questionStorePopulated: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
+    private var questionStoreDifficultyLevel: QuestionAPI? = QuestionAPI(XMLSerializer(File("questions.xml")));
+
 
 
     @BeforeEach
@@ -164,6 +166,62 @@ class QuestionAPITest {
         }
 
 
+    }
+
+    @Nested
+    inner class QuestionsByDifficulty {
+
+        @Test
+        fun `test listing of questions with a difficulty level of 1`() {
+
+            //Assigned Difficulty Level 1
+            testQuestion = Question(1, "How old is Earth?", possibleAnswers1, "4.8 billion", 1);
+            //Assigned Difficulty Level 1
+            testQuestion2 = Question(2, "How old is the universe?", possibleAnswers2, "13.8 billion", 1);
+            //Assigned Difficulty Level 2
+            testQuestion3 = Question(3, "What is the capital of Ireland?", possibleAnswers3, "Dublin", 2);
+
+            //Adding Question objects to Array
+            questionStoreDifficultyLevel!!.addQuestion(testQuestion!!);
+            questionStoreDifficultyLevel!!.addQuestion(testQuestion2!!);
+            questionStoreDifficultyLevel!!.addQuestion(testQuestion3!!);
+
+            // Predicted outcome with expected format of questions that is returned from the 'questionsByDifficultyLevel() function'.
+            var predictedAnswer = "$testQuestion\n$testQuestion2\n";
+            assertEquals(predictedAnswer, questionStoreDifficultyLevel!!.questionsByDifficultyLevel(1));
+        }
+
+        @Test
+        fun `test to show no question added to String if there no difficulty level is matched within the array`() {
+
+            //Assigned Difficulty Level 2
+            testQuestion = Question(1, "How old is Earth?", possibleAnswers1, "4.8 billion", 3);
+
+            // Predicted outcome with expected format of questions that is returned from the 'questionsByDifficultyLevel() function'.
+            var predictedAnswer = "";
+            // There is a user message notifying the user that the difficulty level specified doesn't match an existing questions level.
+            //The above predicted answer is just what the function returns if there is no question difficulty level match
+
+            assertEquals(predictedAnswer, questionStoreDifficultyLevel!!.questionsByDifficultyLevel(2));
+        }
+
+        @Test
+        fun `test to show no question is added to String if the array is empty`() {
+
+            var predictedAnswer = "";
+
+            // verifying there are no existing objects within the 'questions' array
+            assertEquals(0, questionStoreDifficultyLevel!!.numberOfQuestions());
+
+
+            // This is to verify that the predicted answer is correct regardless of difficulty level if the array is empty.
+            assertEquals(predictedAnswer, questionStoreDifficultyLevel!!.questionsByDifficultyLevel(1));
+            assertEquals(predictedAnswer, questionStoreDifficultyLevel!!.questionsByDifficultyLevel(2));
+            assertEquals(predictedAnswer, questionStoreDifficultyLevel!!.questionsByDifficultyLevel(3));
+            assertEquals(predictedAnswer, questionStoreDifficultyLevel!!.questionsByDifficultyLevel(4));
+            assertEquals(predictedAnswer, questionStoreDifficultyLevel!!.questionsByDifficultyLevel(5));
+
+        }
     }
 
 }

@@ -128,6 +128,7 @@ fun playGame() {
                                     qAPI.removeQuestion(question.questionNumber-1); // removes question to stop multiple occurrences
                                     println("------------------------------------");
                                 }
+
                             println("Moving onto the next question....");
                             println("------------------------------------");
 
@@ -469,13 +470,14 @@ fun listQuestions() {
         println(" 1) List all Questions");
         println(" 2) List Questions by difficulty (ascending order)")
         println(" 3) List Questions by difficulty (descending order)");
+        println(" 4) List Questions by entered difficulty level");
         println("---------------------------------------");
         println(" 0) Exit Sub-Menu");
         println("---------------------------------------");
 
         var userChoice = 0;
         try {
-             userChoice = parseInt(readNextLine("Enter Choice [1-3]: "));
+             userChoice = parseInt(readNextLine("Enter Choice [1-4]: "));
         } catch(nfe : NumberFormatException) {
             println("Please Enter a Number!");
         } catch(e : Exception) {
@@ -485,9 +487,49 @@ fun listQuestions() {
             1 -> println("---You chose: List All Questions---\n" + qAPI.listAllQuestions());
             2 -> println("---You chose: List by Ascending Order---\n" + qAPI.allQuestionsByAscendingDifficulty());
             3 -> println("---You chose: List by Descending Order---\n" + qAPI.allQuestionsByDescendingDifficulty());
+            4 -> showByEnteredDifficultyLevel();
             0 -> break;
             else -> println("Invalid choice entered!");
         }
+    }
+}
+
+fun showByEnteredDifficultyLevel() {
+    println("------------------------------------------------------");
+    println("--- You chose: List by Entered Difficulty Level---\n");
+    println("------------------------------------------------------");
+
+    if(qAPI.numberOfQuestions() == 0) {
+        println("There are no questions in the System. Add one!");
+        return;
+    }
+
+    var difficultyLevel = 0;
+
+    while(true) {
+        try {
+            difficultyLevel = parseInt(readNextLine("Please enter a difficulty level here (1-5): "));
+
+            if(difficultyLevel > 5 || difficultyLevel < 1) {
+                println("Pleas enter a number between 1-5!");
+            } else {
+                break;
+            }
+
+        } catch (nfe: NumberFormatException) {
+            println("Please enter a number!");
+        }
+    }
+
+    var allQuestions = qAPI.questionsByDifficultyLevel(difficultyLevel);
+
+    if(allQuestions.isEmpty()) {
+        println("There are no questions by that difficulty level in the System!");
+    } else {
+
+        println("All Questions by Difficulty Level: $difficultyLevel: ");
+        println("-------------------------------------------------------");
+        println(allQuestions);
     }
 }
 

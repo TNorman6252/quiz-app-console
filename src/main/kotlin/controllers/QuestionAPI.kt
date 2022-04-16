@@ -130,6 +130,16 @@ class QuestionAPI(serializerType: Serializer) {
         return answers;
     }
 
+    fun questionsByDifficultyLevel(difficultyLevel: Int) : String {
+        var allQuestions = "";
+        for(q in questions) {
+            if(q.questionDifficultyLevel == difficultyLevel) {
+                allQuestions += "${q}\n";
+            }
+        }
+        return allQuestions;
+    }
+
     @Throws(Exception::class)
     fun load() {
         questions = serializer.read() as ArrayList<Question>
